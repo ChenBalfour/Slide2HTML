@@ -14,12 +14,14 @@
 
 1. 将本仓库下载到所用工具支持的 Skills 目录；建议文件夹命名为 `slide2html`。
 2. 真正必需的是这 4 个文件，目录结构要保留：
+```text
 slide2html/
 ├── SKILL.md
 └── references/
     ├── analysis-framework.md
     ├── html-specification.md
-    └── quality-control.md 
+    └── quality-control.md
+```
 3. 上传可读取的课程材料，或提供本地文件路径。
 4. 请求：“把这些课件转成精美的离线 HTML 学习页，默认中文，支持英文切换。”
 5. 下载生成的 `slide2html.html`，用浏览器直接打开。
