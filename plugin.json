@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "slide2html",
+  "version": "1.0.0",
+  "description": "Create bilingual offline HTML study pages from course slides, notes, and assessment documents.",
+  "author": {
+    "name": "Slide2HTML"
+  }
+}

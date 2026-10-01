@@ -1,0 +1,20 @@
+{
+  "name": "slide2html",
+  "version": "1.0.0",
+  "description": "Create bilingual offline HTML study pages from course slides, notes, and assessment documents.",
+  "author": {
+    "name": "Slide2HTML"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Slide2HTML",
+    "shortDescription": "将课程材料转成双语离线 HTML 学习页",
+    "longDescription": "将课程 PPT、PDF、讲义和作业要求整理成可追溯、可离线打开的中英双语 HTML 学习页。实际文件读取和验证能力取决于使用环境。",
+    "developerName": "Slide2HTML",
+    "category": "Education & Research",
+    "defaultPrompt": [
+      "使用 slide2html 技能，把这些课程材料转成精美的离线 HTML 学习页，默认中文，支持英文切换。"
+    ],
+    "brandColor": "#243A34"
+  }
+}

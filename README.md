@@ -6,13 +6,27 @@
 
 ## 看看设计方向
 
-[打开设计示例的源码/下载入口](examples/slide2html.html)，下载后双击用浏览器打开。暖白与深墨色、编辑式排版和课程概念图形，包含中英切换、双语搜索与来源详情。**内容是合成材料，不是真实课程，也不是所有页面的固定模板。**
+[打开设计示例的源码/下载入口](skills/slide2html/examples/slide2html.html)，下载后双击用浏览器打开。暖白与深墨色、编辑式排版和课程概念图形，包含中英切换、双语搜索与来源详情。**内容是合成材料，不是真实课程，也不是所有页面的固定模板。**
 
 高级感来自字体层级、留白、布局、内容节奏与主题视觉，不依赖 CDN 字体、庞大组件库或装饰性数据。每次生成应适配课程内容和用户审美。
 
 ## 使用
 
-1. 将本仓库下载到所用工具支持的 Skills 目录；建议文件夹命名为 `slide2html`。
+### 从 Codex「添加插件」导入
+
+本仓库根目录是插件目录，Skill 的实际入口为 [`skills/slide2html/SKILL.md`](skills/slide2html/SKILL.md)。根目录包含 `plugin.json` 与 `.codex-plugin/plugin.json`，插件使用环境已有的工具，无需额外 MCP 服务。
+
+下载并解压本仓库后，在仓库根目录使用 PowerShell 打包：
+
+```powershell
+Compress-Archive -Path .codex-plugin,plugin.json,skills,README.md -DestinationPath ..\slide2html-plugin.zip -Force
+```
+
+在 Codex 的「添加插件」窗口中选择生成的 `slide2html-plugin.zip`。插件清单与 `skills/` 必须位于 ZIP 根目录，不能再套一层仓库文件夹。原来的 `slide2html.zip` 是裸 Skill 包，不能直接用于插件上传入口。实际导入是否成功须由客户端结果确认。
+
+### 安装到本地 Skills 目录
+
+1. 将本仓库的 `skills/slide2html/` 文件夹复制到所用工具支持的 Skills 目录，保留文件夹名 `slide2html`；安装路径和启用方式请按该工具说明操作。
 2. 真正必需的是这 4 个文件，目录结构要保留：
 ```text
 slide2html/
@@ -42,16 +56,19 @@ slide2html/
 ## 文件结构
 
 ```text
-SKILL.md                          # 精简入口、证据约束与按需路由
-references/
-  analysis-framework.md           # 复杂材料、考核、版本与证据
-  html-specification.md           # 高端视觉、双语与离线实现
-  quality-control.md              # 事实、文件与浏览器验收
-scripts/
-  validate_html.py                # 零第三方依赖的静态检查
-examples/
-  source-notes.md                 # 合成示例材料
-  slide2html.html                 # 可直接打开的设计样例
+.codex-plugin/plugin.json         # Codex 插件清单与展示信息
+plugin.json                       # 插件清单
+skills/slide2html/
+  SKILL.md                        # 精简入口、证据约束与按需路由
+  references/
+    analysis-framework.md         # 复杂材料、考核、版本与证据
+    html-specification.md         # 高端视觉、双语与离线实现
+    quality-control.md            # 事实、文件与浏览器验收
+  scripts/
+    validate_html.py              # 零第三方依赖的静态检查
+  examples/
+    source-notes.md               # 合成示例材料
+    slide2html.html               # 可直接打开的设计样例
 tests/
   test_validate_html.py           # 检查脚本的回归测试
   evaluation-scenarios.md         # 维护者使用的行为评估场景
@@ -68,7 +85,7 @@ tests/
 ## 维护与验证
 
 ```sh
-python scripts/validate_html.py examples/slide2html.html
+python skills/slide2html/scripts/validate_html.py skills/slide2html/examples/slide2html.html
 python -m unittest discover -s tests -v
 ```
 
