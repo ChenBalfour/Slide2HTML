@@ -20,10 +20,6 @@
 
 **下载时不要选错：** GitHub 绿色「Code → Download ZIP」下载的是整个项目源码，带有外层仓库文件夹，不能原封不动地当作插件包导入。上面的专用下载链接提供已打包的安装文件。
 
-## 如果想自己手动安装 
-
-下载本列表内的plugin文件夹、skills、plugin.json、readme四个文件到本地，打成一个压缩包即可
-
 ## 装好后能做什么
 
 一个可读文件即可开始：讲义生成知识指南，作业生成要求清单，多份课程材料生成整合学习中心。
@@ -54,7 +50,7 @@ slide2html/
     └── quality-control.md
 ```
 
-这个方式安装的是裸 Skill，不适用于 Codex 的「添加插件」ZIP 入口。
+这个方式安装的是裸 Skill，不适用于 Codex 的「添加插件」ZIP 入口。区别在于codex的插件需要有.codex开头的plugin文件以及plugin.json文件
 
 </details>
 
